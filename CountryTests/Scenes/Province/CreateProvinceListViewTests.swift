@@ -42,8 +42,6 @@ class CreateProvinceListViewTests: XCTestCase {
     func testConfigurator(){
         // Given
         sut.interactor = interactorSpy
-        // When
-        sut.configureView()
         // Then
         XCTAssertNotNil(sut.interactor)
     }

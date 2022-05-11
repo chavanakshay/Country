@@ -25,7 +25,7 @@ struct CreateCountryListView: View {
                         .foregroundColor(.red)
                         .fontWeight(.semibold)
                         .multilineTextAlignment(.center)
-                    Button("Retry") {
+                    Button(Constant.RETRY) {
                         fetchCountryList()
                     }
                     .padding(.top,40)
@@ -40,7 +40,7 @@ struct CreateCountryListView: View {
                                         .onTapGesture {
                                             NavigationUtil.push(view: CreateProvinceListView(countryId: String(country.id)).configureView())
                                         }
-                                  
+                                    
                                 }
                             }
                         }
@@ -48,7 +48,7 @@ struct CreateCountryListView: View {
                     .coordinateSpace(name: "pullToRefresh")
                 }
             }
-            .navigationTitle("Country")
+            .navigationTitle(Constant.COUNTRY)
             .showProgressView(shouldShow: $dataStore.shouldShowProgressView)
             .onAppear {
                 fetchCountryList()
@@ -85,6 +85,7 @@ extension CreateCountryListView:CreateCountryListDisplayProtocol{
         dataStore.shouldShowProgressView = true
         dataStore.errorMessage = ""
         let request = CreateCountryList.LoadCountryList.Request()
+        //Ask interactor to fetch countries
         interactor?.loadCountries(request: request, useCase: CountryListUseCase())
     }
 }

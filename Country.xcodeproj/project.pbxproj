@@ -163,7 +163,8 @@
 				8409CA6028299B5D003C0B12 /* Utility */,
 				8409CA1D2829863C003C0B12 /* CountryApp.swift */,
 				8409CA1F2829863C003C0B12 /* ContentView.swift */,
-				8409CA4728298689003C0B12 /* Domain */,
+				8453C8B3282A50D000036078 /* Province */,
+				8409CA4828298A3B003C0B12 /* Country */,
 				8409CA2128298644003C0B12 /* Assets.xcassets */,
 				8409CA2328298644003C0B12 /* Preview Content */,
 			);
@@ -195,15 +196,6 @@
 				8409CA3A28298645003C0B12 /* CountryUITestsLaunchTests.swift */,
 			);
 			path = CountryUITests;
-			sourceTree = "<group>";
-		};
-		8409CA4728298689003C0B12 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				8453C8B3282A50D000036078 /* Province */,
-				8409CA4828298A3B003C0B12 /* Country */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		8409CA4828298A3B003C0B12 /* Country */ = {

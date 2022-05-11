@@ -12,7 +12,7 @@ enum CreateCountryList{
         
         struct Request:Provider{
             var param: [String : Any]{
-                [:]
+                [:]// API need no param.
             }
             var url: String{
                 BASE_URL + "rest/worldregions/country"

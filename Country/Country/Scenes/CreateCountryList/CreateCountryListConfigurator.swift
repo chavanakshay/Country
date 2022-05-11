@@ -8,6 +8,7 @@
 import SwiftUI
 
 extension CreateCountryListView{
+    //connect view interactor and presenter
     func configureView() -> some View {
         var view = self
         let interactor = CreateCountryListInteractor()

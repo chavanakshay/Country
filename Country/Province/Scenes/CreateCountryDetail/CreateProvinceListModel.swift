@@ -9,13 +9,13 @@ import Foundation
 
 enum CreateProvinceList{
     enum LoadProvinceList{
-        
+        //Used enum because we have to pass the parameter
         enum Request:Provider{
             case province(id:String)
             var param: [String : Any]{
                 switch self {
                 case .province(let id):
-                    return ["id":id]
+                    return ["id":id] //pass the parameter received 
                 }
             }
             var url: String{

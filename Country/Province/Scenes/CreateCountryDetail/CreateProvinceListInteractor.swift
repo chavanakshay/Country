@@ -13,7 +13,7 @@ protocol CreateProvinceListBusinessLogic{
 }
 
 
-class CreateProvinceListInteractor{
+final class CreateProvinceListInteractor{
     var store = Set<AnyCancellable>()
     var presenter:CreateProvinceListPresentationLogic?
 }
@@ -27,12 +27,15 @@ extension CreateProvinceListInteractor:CreateProvinceListBusinessLogic{
                 switch completion {
                 case .finished: break
                 case .failure(let error):
-                    self.presenter?.showErrorMessage(message: "❗️ failure: \(error.localizedDescription)")
+                    //recieved error will be passed to presenter
+                    self.presenter?.showErrorMessage(message: "\(Constant.FAILURE) \(error.localizedDescription)")
                 }
             } receiveValue: { result in
                 if result.count == 0 {
-                    self.presenter?.showErrorMessage(message: "No province available")
+                    //recieved error will be passed to presenter
+                    self.presenter?.showErrorMessage(message: Constant.NO_PROVINCE)
                 }else{
+                    //fetched province will be passed to presenter
                     self.presenter?.presentProvinceList(response: CreateProvinceList.LoadProvinceList.Response(provinceList: result))
                 }
             }.store(in: &store)

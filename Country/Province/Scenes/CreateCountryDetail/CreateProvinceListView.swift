@@ -25,7 +25,7 @@ struct CreateProvinceListView: View {
                     .foregroundColor(.red)
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
-                Button("Retry") {
+                Button(Constant.RETRY) {
                     fetchProvinceList(id: countryId)
                 }
                 .padding(.top,40)
@@ -44,7 +44,7 @@ struct CreateProvinceListView: View {
                 .coordinateSpace(name: "pullToRefresh")
             }
         }
-        .navigationTitle("Province")
+        .navigationTitle(Constant.PROVINCE)
         .showProgressView(shouldShow: $dataStore.shouldShowProgressView)
         .onAppear {
             fetchProvinceList(id: countryId)

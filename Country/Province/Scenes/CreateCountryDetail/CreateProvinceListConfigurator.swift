@@ -9,6 +9,7 @@
 import SwiftUI
 
 extension CreateProvinceListView{
+    //connect view interactor and presenter
     func configureView() -> some View {
         var view = self
         let interactor = CreateProvinceListInteractor()
